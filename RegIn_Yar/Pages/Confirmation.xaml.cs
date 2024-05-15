@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Threading;
 
 namespace RegIn_Yar.Pages
 {
@@ -28,16 +28,8 @@ namespace RegIn_Yar.Pages
             Regin
         }
         TypeConfirmation ThisTypeConfirmation;
-        public int Code = 0;
+        public int Code;
 
-
-        public void SendMailCode()
-        {
-            Code = new Random().Next(100000, 999999);
-            Classes.SendMail.SendMessage($"Login code: {Code}", MainWindow.mainWindow.UserLogIn.Login);
-            Thread TSendMailCode = new Thread(TimerSendMailCode);
-            TSendMailCode.Start();
-        }
 
         public Confirmation(TypeConfirmation TypeConfirmation)
         {
@@ -47,25 +39,6 @@ namespace RegIn_Yar.Pages
             SendMailCode();
         }
 
-        public void TimerSendMailCode()
-        {
-
-            for (int i = 0; i < 60; i++)
-            {
-
-                Dispatcher.Invoke(() =>
-                {
-                    LTimer.Content = $"A second message can be sent after {(60 - i)} seconds";
-                });
-                Thread.Sleep(1000);
-            }
-
-            Dispatcher.Invoke(() =>
-            {
-                BSendMessage.IsEnabled = true;
-                LTimer.Content = "";
-            });
-        }
 
         private void SendMail(object sender, RoutedEventArgs e)
         {
@@ -102,7 +75,33 @@ namespace RegIn_Yar.Pages
         {
             MainWindow.mainWindow.OpenPage(new Login());
         }
+        public void SendMailCode()
+        {
+            Code = new Random().Next(100000, 999999);
+            Classes.SendMail.SendMessage($"Login code: {Code}", MainWindow.mainWindow.UserLogIn.Login);
+            Thread TSendMailCode = new Thread(TimerSendMailCode);
+            TSendMailCode.Start();
+        }
 
+
+        public void TimerSendMailCode()
+        {
+
+            for (int i = 0; i < 60; i++)
+            {
+
+                Dispatcher.Invoke(() =>
+                {
+                    LTimer.Content = $"A second message can be sent after {(60 - i)} seconds";
+                });
+                Thread.Sleep(1000);
+            }
+
+            Dispatcher.Invoke(() =>
+            {
+                BSendMessage.IsEnabled = true;
+                LTimer.Content = "";
+            });
+        }
     }
 }
-

@@ -4,9 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RegIn_Yar.Pages"
-     d:DesignHeight="450" d:DesignWidth="800"
-      Title="Confirmation"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Confirmation"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       TextElement.FontWeight="Regular"
       TextElement.FontSize="13"
@@ -28,7 +29,7 @@
                     Margin="32"
                     VerticalAlignment="Top"
                     Width="100"
-                    Source="/RegIN;component/Images/ic-mail.png">
+                    Source="C:\Users\Фима\source\repos\RegIn_Yar\RegIn_Yar\Images\ic-mail.png">
                     <Image.Clip>
                         <EllipseGeometry
                             RadiusX="50"
@@ -59,7 +60,7 @@
                        FontSize="12"/>
                 <Button x:Name="BSendMessage"
                         IsEnabled="False"
-                        Width="200px"
+                        Width="200"
                         Height="25"
                         Content="Send Message"
                         Margin="46,235,54,43.2"
@@ -74,4 +75,3 @@
         </materialDesign:Card>
     </Grid>
 </Page>
-            

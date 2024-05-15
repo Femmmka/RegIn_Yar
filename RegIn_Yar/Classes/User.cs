@@ -32,43 +32,43 @@ namespace RegIn_Yar.Classes
         public void GetUserLogin(string Login)
         {
 
+
             this.Id = -1;
             this.Login = String.Empty;
             this.Password = String.Empty;
             this.Name = String.Empty;
-            this.Image = new byte[0];
+            Image = new byte[0];
+
 
             MySqlConnection mySqlConnection = WorkingDB.OpenConnection();
 
             if (WorkingDB.OpenConnection(mySqlConnection))
             {
 
-                MySqlDataReader userQuery = WorkingDB.Query($"SELECT * FROM `users` WHERE `Login` = '{Login}'", mySqlConnection);
+                MySqlDataReader reader = WorkingDB.Query($"SELECT * FROM `users` WHERE `Login` = '{Login}'", mySqlConnection);
 
-                if (userQuery.HasRows)
+                if (reader.HasRows)
                 {
 
-                    userQuery.Read();
+                    reader.Read();
 
-                    this.Id = userQuery.GetInt32(0);
+                    this.Id = reader.GetInt32(0);
 
-                    this.Login = userQuery.GetString(1);
+                    this.Login = reader.GetString(1);
 
-                    this.Password = userQuery.GetString(2);
+                    this.Password = reader.GetString(2);
 
-                    this.Name = userQuery.GetString(3);
+                    this.Name = reader.GetString(3);
 
-                    if (!userQuery.IsDBNull(4))
+                    if (!string.IsNullOrEmpty(reader["Image"].ToString()))
                     {
 
                         this.Image = new byte[64 * 1024];
-
-                        userQuery.GetBytes(4, 0, Image, 0, Image.Length);
+                        reader.GetBytes(4, 0, Image, 0, Image.Length);
                     }
 
-                    this.DateUpdate = userQuery.GetDateTime(5);
-
-                    this.DateUpdate = userQuery.GetDateTime(6);
+                    DateUpdate = DateTime.Parse(reader["DateUpdate"].ToString());
+                    DateCreate = DateTime.Parse(reader["DateCreate"].ToString());
 
                     HandlerCorrectLogin.Invoke();
                 }

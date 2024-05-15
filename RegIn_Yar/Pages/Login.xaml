@@ -35,7 +35,7 @@
                     Margin="32"
                     VerticalAlignment="Top"
                     Width="100"
-                    Source="/RegIN;component/Images/ic-user.png">
+                    Source="C:\Users\Фима\source\repos\RegIn_Yar\RegIn_Yar\Images\ic-user.png">
                     <Image.Clip>
                         <EllipseGeometry
                             RadiusX="50"

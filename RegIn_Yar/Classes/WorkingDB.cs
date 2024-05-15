@@ -7,7 +7,7 @@ namespace RegIn_Yar.Classes
 {
     public class WorkingDB
     {
-        readonly static string connection = "server=localhost;port=3306;database=regin;user=root;pwd=root;";
+        readonly static string connection = "server=127.0.0.1;port=3306;database=regin;user=root;pwd=;";
 
         public static MySqlConnection OpenConnection()
         {
@@ -37,6 +37,7 @@ namespace RegIn_Yar.Classes
 
         public static void CloseConnection(MySqlConnection mySqlConnection)
         {
+
             mySqlConnection.Close();
 
             MySqlConnection.ClearPool(mySqlConnection);
@@ -48,3 +49,4 @@ namespace RegIn_Yar.Classes
         }
     }
 }
+

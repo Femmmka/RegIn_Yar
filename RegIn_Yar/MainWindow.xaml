@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegIn_Yar"
         mc:Ignorable="d"
-        Title="Модуль авторизации" MinWidth="800" MinHeight="450" Height="450" Width="800" Icon="Images/646135.png">
+        Title="Модуль авторизации" MinWidth="800" MinHeight="450" Height="450" Width="800" Icon="C:\Users\Фима\source\repos\RegIn_Yar\RegIn_Yar\Images\ic-user.png">
     <Grid>
         <Frame x:Name="frame" NavigationUIVisibility="Hidden"/>
     </Grid>

@@ -4,7 +4,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
-
 namespace RegIn_Yar.Elements
 {
     /// <summary>
@@ -120,3 +119,4 @@ namespace RegIn_Yar.Elements
         }
     }
 }
+

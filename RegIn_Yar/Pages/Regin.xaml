@@ -4,8 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RegIn_Yar.Pages"
-     mc:Ignorable="d" 
-    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       TextElement.FontWeight="Regular"
       TextElement.FontSize="13"
@@ -32,7 +32,7 @@
                     Margin="32"
                     VerticalAlignment="Top"
                     Width="100"
-                    Source="/RegIn;component/Images/ic-user.png"
+                    Source="C:\Users\Фима\source\repos\RegIn_Yar\RegIn_Yar\Images\ic-user.png"
                     MouseDown="SelectImage">
                     <Image.Clip>
                         <EllipseGeometry
@@ -105,3 +105,4 @@
         </materialDesign:Card>
     </Grid>
 </Page>
+            

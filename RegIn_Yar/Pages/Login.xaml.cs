@@ -20,12 +20,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace RegIn_Yar.Pages
 {
     /// <summary>
     /// Логика взаимодействия для Login.xaml
     /// </summary>
+    /// 
+
     public partial class Login : Page
     {
 
@@ -73,7 +74,7 @@ namespace RegIn_Yar.Pages
 
         public void InCorrectLogin()
         {
-            if (LNameUser.Content != "")
+            if (LNameUser.Content.ToString() != "")
             {
                 LNameUser.Content = "";
                 DoubleAnimation StartAnimation = new DoubleAnimation();
@@ -119,16 +120,13 @@ namespace RegIn_Yar.Pages
 
         public void SetPassword()
         {
-
             if (MainWindow.mainWindow.UserLogIn.Password != String.Empty)
             {
-
                 if (IsCapture)
                 {
 
                     if (MainWindow.mainWindow.UserLogIn.Password == TbPassword.Password)
                     {
-
                         MainWindow.mainWindow.OpenPage(new Confirmation(Confirmation.TypeConfirmation.Login));
                     }
                     else
@@ -136,19 +134,13 @@ namespace RegIn_Yar.Pages
 
                         if (CountSetPassword > 0)
                         {
-
                             SetNotification($"Password is incorrect, {CountSetPassword} attempts left", Brushes.Red);
-
                             CountSetPassword--;
                         }
                         else
                         {
-
                             Thread TBlockAutorization = new Thread(BlockAutorization);
-
                             TBlockAutorization.Start();
-
-
                             SendMail.SendMessage("An attempt was made to log into your account.", MainWindow.mainWindow.UserLogIn.Login);
                         }
                     }
@@ -254,3 +246,4 @@ namespace RegIn_Yar.Pages
 
     }
 }
+
