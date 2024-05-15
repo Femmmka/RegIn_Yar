@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RegIn_Yar.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+       d:DesignHeight="450" d:DesignWidth="800"
       Title="Login"
       
       xmlns:uc="clr-namespace:RegIn_Yar.Elements"
@@ -35,7 +35,7 @@
                     Margin="32"
                     VerticalAlignment="Top"
                     Width="100"
-                    Source="/RegIn;component/Images/ic-user.png">
+                    Source="/RegIN;component/Images/ic-user.png">
                     <Image.Clip>
                         <EllipseGeometry
                             RadiusX="50"

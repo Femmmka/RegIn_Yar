@@ -5,9 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RegIn_Yar.Pages"
       mc:Ignorable="d" 
-     mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      xmlns:uc="clr-namespace:RegIN_Паксюаткин.Elements"
+    d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:uc="clr-namespace:RegIn_Yar.Elements"
       Title="Recovery"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -33,7 +32,7 @@
                     VerticalAlignment="Top"
                     Width="100"
                     Source="/RegIN;component/Images/ic-user.png">
-
+                    
                     <Image.Clip>
                         <EllipseGeometry
                             RadiusX="50"
@@ -78,3 +77,4 @@
         </materialDesign:Card>
     </Grid>
 </Page>
+
